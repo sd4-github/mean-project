@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+      // var a=document.getElementById("cart-subtotal")
+    // var b=productarray[0].price;
+    // document.getElementById("cart-subtotal").innerHTML
+    </script> -->
+</head>
+<body>
+
+    <h1>Shopping Cart</h1>
+
+<div class="shopping-cart" >
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+
+
+  <div *ngFor="let product of productarray">
+  <div class="product">
+    
+    <!-- <div class="product-image">
+      <img [src]="product.imgurl">
+      {{product.imgurl}}
+    </div> -->
+    <div class="product-image">
+      <img src="../../../assets/{{product.imgurl}}" height="50px" width="80px">
+    </div>
+    <div class="product-details">
+      <div class="product-title">{{product.prodname}}</div>
+      <p class="product-description">{{product.description}}</p>
+
+    </div>
+    <div class="product-price">{{product.price}}</div>
+    <div class="product-quantity">
+      <!-- <input type="number" id="quan" value="{{product.quantity}}"> -->
+      <form #form=ngForm (ngSubmit)="prodquantity(form)" >
+        <input type="text" ngModel name='quantity' [(ngModel)]='product.quantity'>
+        </form>
+    </div>
+    <div class="product-removal">
+      <form #cart=ngForm (ngSubmit)="delete(cart)" >
+        <input type="hidden" ngModel name='cartid' [(ngModel)]='product._id'>
+        <button class="btn btn-primary" type="submit">Remove</button>
+  </form> 
+    </div>
+
+    
+    <div class="product-line-price">{{product.price}}*{{product.quantity}}={{product.price*product.quantity}}</div>
+  </div>
+ 
+  </div>
+
+  <div class="totals">
+  
+ 
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <!-- <div *ngFor="let product of productarray"> -->
+       
+      <div class="totals-value" id="cart-subtotal">
+        <!-- {{product.price*product.quantity}}+ -->
+      </div>
+     
+    <!-- </div> -->
+  </div>
+    <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax">3.60</div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping">15.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total">90.57</div>
+    </div>
+    <button class="btn btn-primary" type="submit">Checkout</button>
+  </div>
+  
+  <!-- <button class="checkout"> <a routerLink={{product._id}} class="btn btn-primary">checkout</a></button> -->
+  <!-- <button class="checkout"><a routerLink="checkout"  class="btn btn-primary">Checkout</a></button> -->
+</div>
+
+</body>
+</html>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="./login.component.js"></script> -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+
+
+  <!-- <div class="login-wrap">
+    <div class="login-html">
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Admin Add Product Page</label>
+      <input id="tab-2" type="hidden" name="tab" class="for-pwd"><label for="tab-2" class="tab"></label>
+     <div class="form-admin-product">
+        
+          <form (ngSubmit)='addproduct()' [formGroup]='adminprodForm'>
+            <div class="sign-in-htm">
+          <div class="group">
+    
+            <label for="prodname" class="label">PRODUCT NAME : </label>
+            <input formControlName='prodname' type="text"  class="input" placeholder="Your product name..">
+                 <div  *ngIf="adminprodForm.get('prodname').hasError('pattern') && adminprodForm.get('prodname').touched">
+                       Productname is required
+                    </div>
+            </div>
+         <div class="group">
+             <label for="prod_img" class="label">PRODUCT IMAGE : </label>
+             <input formControlName='prod_img' type="file"  (change)="uploadFile($event)">
+                 <div  *ngIf="adminprodForm.get('prod_img').hasError('pattern') && adminprodForm.get('prod_img').touched">
+                       Product image is required  
+                </div>
+          </div>
+
+          <div class="group">
+            <label for="prod_price" class="label">PRODUCT PRICE : </label>
+            <input formControlName='prodname' type="text"  class="input" placeholder="Your product name..">
+                 <div  *ngIf="adminprodForm.get('prodname').hasError('pattern') && adminprodForm.get('prodname').touched">
+                       Productname is required
+                    </div>
+            </div>
+
+            <div class="group">
+    
+              <label for="prod_desc" class="label">PRODUCT DESCRIPTION : </label>
+              <input formControlName='prod_desc' type="text"   class="input" placeholder="description of your product.">
+                         
+              <div  *ngIf="adminprodForm.get('prod_desc').hasError('pattern') && adminprodForm.get('prod_desc').touched">
+                  Product description is required  
+              </div>
+              </div>
+
+
+          <div class="group">
+            <input type="submit" class="button" value="Submit">
+          </div>
+          <div class="hr"></div>
+        </div>
+          </form>
+     
+      </div>
+    </div>
+  </div> -->
+  
+
+ <div class="container">
+  <div class="form admin-product">
+  
+      <br>
+      <form action="action_page.php">
+        <form (ngSubmit)='addproduct()' [formGroup]='adminprodForm'>
+          <div class="row">
+                 <div class="col-25">
+                     <label for="prodname">PRODUCT NAME : </label>
+                  </div>
+             <div class="col-75">
+                  <input formControlName='prodname' type="text"  placeholder="Your product name..">
+
+                  <div  *ngIf="adminprodForm.get('prodname').hasError('pattern') && adminprodForm.get('prodname').touched">
+                         Productname is required
+                   </div>
+               </div>
+            </div>
+            <br>
+         <div class="row">
+                   <div class="col-25">
+                       <label for="prod_img">PRODUCT IMAGE : </label>
+                     </div>
+                   <div class="col-75">
+                    <input formControlName='prod_img' type="file"  (change)="uploadFile($event)">
+      
+                    <div  *ngIf="adminprodForm.get('prod_img').hasError('pattern') && adminprodForm.get('prod_img').touched">
+                        Product image is required  
+                    </div>
+                    </div>
+           </div>
+           <br>
+          <div class="row">
+                    <div class="col-25">
+                      <label for="prod_price">PRODUCT PRICE : </label>
+                      </div>
+                    <div class="col-75">
+                      <input formControlName='prod_price' type="text"  placeholder="price of your product..">
+                      
+                      <div  *ngIf="adminprodForm.get('prod_price').hasError('pattern') && adminprodForm.get('prod_price').touched">
+                          Product price is required  
+                      </div>
+                     </div>
+             </div>
+             <br>
+            <div class="row">
+                       <div class="col-25">
+                           <label for="prod_desc">PRODUCT DESCRIPTION : </label>
+                         </div>
+                         <div class="col-75">
+                          <input formControlName='prod_desc' type="text"  placeholder="description of your product.">
+                         
+                          <div  *ngIf="adminprodForm.get('prod_desc').hasError('pattern') && adminprodForm.get('prod_desc').touched">
+                              Product description is required  
+                          </div>
+                           </div>
+                </div>
+                <br>
+                
+                      <input type="submit" value="Submit">
+                  
+        </form>
+  </form>
+</div>
+</div>
+
+</body>
+</html>
+  <router-outlet></router-outlet>

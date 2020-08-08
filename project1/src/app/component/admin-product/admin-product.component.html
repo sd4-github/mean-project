@@ -1,0 +1,23 @@
+<div class="container">
+    
+<div class="row">   
+
+    <div *ngFor="let product of productarray">
+        <div class="col">
+
+            <div class="card">
+                <img src="../../../assets/{{product.imgurl}}" class="img">
+                <h1>{{product.prodname}}</h1>
+                <p class="price">{{product.price}}Rs.</p>
+                <p>{{product.description}}</p>
+                <p> <a routerLink="/adminedit/{{product._id}}" class="btn btn-primary">Product Edit</a></p>
+                <form #form=ngForm (ngSubmit)="delete(form)" >
+                            <input type="hidden" ngModel name='productid' [(ngModel)]='product._id'>
+                            <button class="btn btn-primary" type="submit">delete</button>
+                 </form>   
+              </div>
+          </div>
+      </div>
+</div>
+</div>
+

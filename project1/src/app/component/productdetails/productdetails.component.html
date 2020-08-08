@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+   
+    <main class="container">
+ <div class='row'>
+
+     <!-- Left Column / Headphones Image -->
+     <!-- <div class="col">
+      <img src="../../../assets/{{productarray.imgurl}}">
+    </div> -->
+    <div class="left-column">
+      <img data-image="black" src="../../../assets/{{productarray.imgurl}}" alt="">
+      <img data-image="blue" src="../../../assets/{{productarray.imgurl}}" alt="">
+      <img data-image="red" class="active" src="../../../assets/{{productarray.imgurl}}" alt="">
+    </div>
+ 
+   
+    <!-- Right Column -->
+    <div class="right-column">
+   
+      <!-- Product Description -->
+      <div class="product-description">
+        <span>{{productarray.prodname}}</span>
+        <h1>{{productarray.description}}</h1>
+        <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+      </div>
+   
+      <!-- Product Configuration -->
+      <div class="product-configuration">
+   
+        <!-- Product Color -->
+        <div class="product-color">
+          <span>Color</span>
+   
+          <div class="color-choose">
+            <div>
+              <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+              <label for="red"><span></span></label>
+            </div>
+            <div>
+              <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+              <label for="blue"><span></span></label>
+            </div>
+            <div>
+              <input data-image="black" type="radio" id="black" name="color" value="black">
+              <label for="black"><span></span></label>
+            </div>
+          </div>
+   
+        </div>
+   
+        <!-- Cable Configuration -->
+        <div class="cable-config">
+          <span>Cable configuration</span>
+   
+          <div class="cable-choose">
+            <button>Straight</button>
+            <button>Coiled</button>
+            <button>Long-coiled</button>
+          </div>
+   
+          <a href="#">How to configurate your {{productarray.prodname}}</a>
+        </div>
+      </div>
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span>{{productarray.price}}</span>
+        <a routerLink="/cart/{{productarray._id}}" class="cart-btn">Add to cart</a>
+      </div>
+    </div>
+
+ </div>
+     
+    </main>
+  </body>
+  </html>
+  

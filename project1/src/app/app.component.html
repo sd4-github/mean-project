@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg  navbar navbar-light" style="background-color:  #F97777;">
+  <div class="container">
+
+    <a class="navbar-brand" routerLink="about"><img src="../assets/kisspng-logo-mcdonald-s-i-m-lovin-it-trademark-i-m-lovin-5b6a26a368c0c2.6906808915336833634291.jpg" class="images"> </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <div *ngIf="!userToken">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="login">LOGIN<span class="sr-only">(current)</span></a>
+          </li>
+        </div>
+          <div *ngIf="userToken">
+           <li class="nav-item active">
+            <a class="nav-link" (click)="logout()" style="cursor: pointer;">LOGOUT<span class="sr-only">(current)</span></a>
+          </li>
+          </div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dashboard">PRODUCTS</a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link" routerLink="logout">PROFILE<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link" routerLink="cart/:id">CART<span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+    </div>
+<!-- </nav> -->
+<!-- <nav class="navbar navbar-light bg-light"> -->
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+</nav>
+
+
+<router-outlet></router-outlet>

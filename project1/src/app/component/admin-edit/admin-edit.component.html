@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="./login.component.js"></script> -->
+</head>
+<body>
+
+<div class="cont">
+  <div class="form admin-product">
+    <form (ngSubmit)='adminedit()' [formGroup]='admineditproduct' >
+
+  
+
+      
+      <input type="text" formControlName='productId' [(ngModel)]="product_obj._id" >
+
+      <br>
+      <label for="prodname">PRODUCT NAME : </label>
+      <input formControlName='prodname' type="text" [(ngModel)]="product_obj.prodname">
+      
+      <!-- <p>{{errorvalue }}</p> -->
+
+      <br>
+      <label for="prod_img">PRODUCT IMAGE : </label>
+      <input formControlName='prod_img' type="file"  (change)="uploadFile($event)"/>
+
+      <br>
+      <label for="price">PRODUCT PRICE : </label>
+      <input formControlName='price' type="text" [(ngModel)]="product_obj.price">
+    
+
+      <br>
+      <label for="description">PRODUCT DESCRIPTION : </label>
+      <input formControlName='description' type="text" [(ngModel)]="product_obj.description">
+   
+  
+    <!-- <button>submit</button> -->
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+</body>
+</html>
+  <router-outlet></router-outlet>

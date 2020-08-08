@@ -1,0 +1,28 @@
+<div class="container">
+
+<div class="row">
+  
+    <div *ngFor="let product of productarray">
+        <div class="col">
+
+            <div class="card">
+                <img src="../../../assets/{{product.imgurl}}" class="img">
+                <h1>{{product.prodname}}</h1>
+                <p class="price">{{product.price}}Rs</p>
+                <p>  <a routerLink={{product._id}} class="btn btn-primary">Details</a></p>
+                <form #form=ngForm (ngSubmit)="cart(form)" >
+                         <input type="text" ngModel name='productId' [(ngModel)]='product._id'>
+                        <input type="text" ngModel name='userId' [(ngModel)]='userid'>
+                        <label>Quantity</label>
+                        <div>
+                            <input type="number" ngModel name='quantity' #quantity=ngModel >
+                        </div>
+                       <br>
+                         <button class="btn btn-primary" type="submit">Add to Cart</button>
+
+                 </form> 
+              </div>
+          </div>
+      </div>
+</div> 
+</div>
